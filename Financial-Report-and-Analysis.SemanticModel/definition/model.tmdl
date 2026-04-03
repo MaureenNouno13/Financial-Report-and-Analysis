@@ -10,5 +10,14 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["tbl_Calendar","tbl_ChartofAccounts","tbl_GL","tbl_territory"]
+
+ref table tbl_Calendar
+ref table DateTableTemplate_830424d2-e4a4-4446-aa54-cda1d446155d
+ref table LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23
+ref table tbl_ChartofAccounts
+ref table tbl_GL
+ref table tbl_territory
+
 ref cultureInfo fr-FR
 

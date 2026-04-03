@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 1.3333333730697632
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 621.716378261764,
+            "y": 0
+          },
+          "nodeIndex": "tbl_Calendar",
+          "nodeLineageTag": "b7eb02b4-4edb-47ab-8ebe-7e10e40cc1e7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 331.38305001469371,
+            "y": 393
+          },
+          "nodeIndex": "tbl_ChartofAccounts",
+          "nodeLineageTag": "174b9e6c-0dfc-4cef-a56e-dec609d6d996",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 334.20156119318523,
+            "y": -5.1553020401548935
+          },
+          "nodeIndex": "tbl_GL",
+          "nodeLineageTag": "6b35671d-0a99-41ae-a1ea-8ed56fb13039",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 27.985110779599395
+          },
+          "nodeIndex": "tbl_territory",
+          "nodeLineageTag": "536cac59-6c77-477e-a6fa-4658d0772df0",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

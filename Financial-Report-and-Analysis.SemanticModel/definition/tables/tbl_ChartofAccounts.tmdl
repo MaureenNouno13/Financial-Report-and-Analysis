@@ -1,0 +1,72 @@
+table tbl_ChartofAccounts
+	lineageTag: 174b9e6c-0dfc-4cef-a56e-dec609d6d996
+
+	column Account_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 67c44498-67a6-45b0-b73b-5f946695996d
+		summarizeBy: none
+		sourceColumn: Account_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Report
+		dataType: string
+		lineageTag: 9307e5a7-94b1-47a5-8396-b3cbc748e65e
+		summarizeBy: none
+		sourceColumn: Report
+
+		annotation SummarizationSetBy = Automatic
+
+	column Class
+		dataType: string
+		lineageTag: c41381b4-5af8-4984-9d16-0d4b8f8055d2
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubClass
+		dataType: string
+		lineageTag: a2b4c536-db40-4489-93e4-27ce374f0e87
+		summarizeBy: none
+		sourceColumn: SubClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubClass2
+		dataType: string
+		lineageTag: d3f19931-482b-4628-899e-b1d1f4feb2dd
+		summarizeBy: none
+		sourceColumn: SubClass2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account
+		dataType: string
+		lineageTag: 1b9e5820-5bad-4438-9409-f6b021e1ba7d
+		summarizeBy: none
+		sourceColumn: Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubAccount
+		dataType: string
+		lineageTag: e3b7f4c2-0886-4345-8b49-07d420063ed2
+		summarizeBy: none
+		sourceColumn: SubAccount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tbl_ChartofAccounts = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\23769\Documents\PROJETS BI\Financial-Report-and-Analysis\Data_file.xlsx"), null, true),
+				    tbl_ChartofAccounts_Table = Source{[Item="tbl_ChartofAccounts",Kind="Table"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(tbl_ChartofAccounts_Table,{{"Account_key", Int64.Type}, {"Report", type text}, {"Class", type text}, {"SubClass", type text}, {"SubClass2", type text}, {"Account", type text}, {"SubAccount", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

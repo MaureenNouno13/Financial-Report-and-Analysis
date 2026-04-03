@@ -1,0 +1,42 @@
+table tbl_territory
+	lineageTag: 536cac59-6c77-477e-a6fa-4658d0772df0
+
+	column Territory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a51c65c3-921a-42f8-aa6d-cc1680139cb6
+		summarizeBy: none
+		sourceColumn: Territory_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 924205b3-5725-4647-a452-fa7c40653683
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: a505f451-cc47-4502-88aa-55e9196c5446
+		dataCategory: Continent
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tbl_territory = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\23769\Documents\PROJETS BI\Financial-Report-and-Analysis\Data_file.xlsx"), null, true),
+				    tbl_territory_Table = Source{[Item="tbl_territory",Kind="Table"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(tbl_territory_Table,{{"Territory_key", Int64.Type}, {"Country", type text}, {"Region", type text}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+

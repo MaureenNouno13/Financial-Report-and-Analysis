@@ -1,0 +1,17 @@
+relationship 9035d707-56d7-4df5-b89f-eaf6e6c6645d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: tbl_Calendar.Date
+	toColumn: LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23.Date
+
+relationship AutoDetected_651be64c-4b50-4f06-8759-764f8ab15e0b
+	fromColumn: tbl_GL.Account_key
+	toColumn: tbl_ChartofAccounts.Account_key
+
+relationship AutoDetected_b37cea28-b5c9-4776-9d32-39b42b22c3e3
+	fromColumn: tbl_GL.Territory_key
+	toColumn: tbl_territory.Territory_key
+
+relationship 6e31b7c6-b69f-33f4-0cd6-4030d12cfc73
+	fromColumn: tbl_GL.Date
+	toColumn: tbl_Calendar.Date
+

@@ -1,0 +1,71 @@
+table tbl_GL
+	lineageTag: 6b35671d-0a99-41ae-a1ea-8ed56fb13039
+
+	column EntryNo
+		dataType: double
+		lineageTag: 8201a025-747f-4995-bac7-a2eaaf8279be
+		summarizeBy: none
+		sourceColumn: EntryNo
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5d08ea82-3fff-464c-a918-ec885e650f8c
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Territory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 18aa200f-d8c9-4cdf-85e8-3f187708b0c1
+		summarizeBy: none
+		sourceColumn: Territory_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f88bb595-b335-441a-9bce-973b01136670
+		summarizeBy: none
+		sourceColumn: Account_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Details
+		dataType: string
+		lineageTag: 4a6c3477-f008-4735-82a7-b66844981609
+		summarizeBy: none
+		sourceColumn: Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 311059df-45dc-4636-af1d-7888923b5c50
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tbl_GL = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\23769\Documents\PROJETS BI\Financial-Report-and-Analysis\Data_file.xlsx"), null, true),
+				    tbl_GL_Table = Source{[Item="tbl_GL",Kind="Table"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(tbl_GL_Table,{{"EntryNo", type number}, {"Date", type date}, {"Territory_key", Int64.Type}, {"Account_key", Int64.Type}, {"Details", type text}, {"Amount", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_ResultType = Table
+
