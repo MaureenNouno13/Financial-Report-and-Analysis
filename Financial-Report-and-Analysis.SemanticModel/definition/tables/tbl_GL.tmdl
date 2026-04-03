@@ -49,13 +49,17 @@ table tbl_GL
 		annotation SummarizationSetBy = Automatic
 
 	column Amount
-		dataType: int64
+		dataType: double
 		formatString: 0
 		lineageTag: 311059df-45dc-4636-af1d-7888923b5c50
 		summarizeBy: sum
 		sourceColumn: Amount
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	partition tbl_GL = m
 		mode: import

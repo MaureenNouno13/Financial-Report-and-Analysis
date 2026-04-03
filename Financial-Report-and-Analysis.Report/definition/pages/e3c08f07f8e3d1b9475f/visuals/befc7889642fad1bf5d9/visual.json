@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "befc7889642fad1bf5d9",
   "position": {
-    "x": 77.480910747652771,
-    "y": 308.03386467969273,
-    "z": 1,
-    "height": 264.56896352857046,
-    "width": 1124.4180949964245,
-    "tabOrder": 1
+    "x": 53.434535104364329,
+    "y": 158.68437697659709,
+    "z": 1000,
+    "height": 265.55344718532575,
+    "width": 846.8564199873498,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -140,11 +140,27 @@
                 }
               },
               "queryRef": "Sum(tbl_GL.Amount)",
-              "nativeQueryRef": "Somme de Amount"
+              "nativeQueryRef": "Amount",
+              "displayName": "Amount"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -189,8 +205,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "null"
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
                     }
                   }
                 }
@@ -201,8 +218,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.2
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -315,125 +332,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "7a569bec7cb0818fcc83",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "tbl_Calendar"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hiérarchie de dates"
-              }
-            },
-            "Level": "Année"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "83eb41ea631647f02c2a",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "tbl_Calendar"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hiérarchie de dates"
-              }
-            },
-            "Level": "Trimestre"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d65ef4695684c9b53fbe",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "tbl_Calendar"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hiérarchie de dates"
-              }
-            },
-            "Level": "Mois"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5d40d94bfc6a8243be96",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "tbl_Calendar"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Hiérarchie de dates"
-              }
-            },
-            "Level": "Jour"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "04608da4788a3abdc5f7",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "tbl_GL"
-                  }
-                },
-                "Property": "Amount"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

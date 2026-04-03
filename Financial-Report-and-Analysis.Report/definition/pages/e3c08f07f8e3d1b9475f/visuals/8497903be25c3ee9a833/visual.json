@@ -1,46 +1,20 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "81bb6ce55d5a0237279d",
+  "name": "8497903be25c3ee9a833",
   "position": {
     "x": 53.434535104364329,
-    "y": 24.288425047438331,
-    "z": 0,
-    "height": 134.39595192915877,
+    "y": 442.04933586337762,
+    "z": 2000,
+    "height": 265.55344718532575,
     "width": 846.8564199873498,
-    "tabOrder": 0
+    "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
-        "Columns": {
+        "Category": {
           "projections": [
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "tbl_Calendar"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hiérarchie de dates"
-                    }
-                  },
-                  "Level": "Année"
-                }
-              },
-              "queryRef": "tbl_Calendar.Date.Variation.Hiérarchie de dates.Année",
-              "nativeQueryRef": "Date Année",
-              "active": true
-            },
             {
               "field": {
                 "HierarchyLevel": {
@@ -91,7 +65,7 @@
               },
               "queryRef": "tbl_Calendar.Date.Variation.Hiérarchie de dates.Mois",
               "nativeQueryRef": "Date Mois",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -121,26 +95,36 @@
             }
           ]
         },
-        "Rows": {
+        "Series": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "tbl_ChartofAccounts"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "tbl_Calendar"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hiérarchie de dates"
                     }
                   },
-                  "Property": "SubClass"
+                  "Level": "Année"
                 }
               },
-              "queryRef": "tbl_ChartofAccounts.SubClass",
-              "nativeQueryRef": "SubClass",
-              "active": true
+              "queryRef": "tbl_Calendar.Date.Variation.Hiérarchie de dates.Année",
+              "nativeQueryRef": "Date Année"
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -159,31 +143,18 @@
                 }
               },
               "queryRef": "Sum(tbl_GL.Amount)",
-              "nativeQueryRef": "Somme de Amount"
+              "nativeQueryRef": "Amount",
+              "displayName": "Amount"
             }
           ]
         }
       }
     },
     "objects": {
-      "values": [
+      "labels": [
         {
           "properties": {
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "14D"
-                }
-              }
-            },
-            "bandedRowHeaders": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -193,155 +164,77 @@
           }
         },
         {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Sum(tbl_GL.Amount)"
-          }
-        }
-      ],
-      "subTotals": [
-        {
           "properties": {
-            "columnSubtotals": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "rowSubtotals": {
+            "showSeries": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
                 }
               }
             }
           },
           "selector": {
-            "id": "Column"
-          }
-        }
-      ],
-      "columnTotal": [
-        {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                          }
+                        },
+                        "Property": "Année"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2019L"
+                      }
                     }
                   }
                 }
               }
-            },
-            "applyToHeaders": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
+            ]
           }
-        }
-      ],
-      "rowTotal": [
+        },
         {
           "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "applyToHeaders": {
+            "showSeries": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             }
-          }
-        }
-      ],
-      "columnFormatting": [
-        {
-          "properties": {},
+          },
           "selector": {
-            "metadata": "Sum(tbl_GL.Amount)"
-          }
-        }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                          }
+                        },
+                        "Property": "Année"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2018L"
+                      }
+                    }
+                  }
                 }
               }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "columnHeaders": [
-        {
-          "properties": {
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
+            ]
           }
         }
       ]
@@ -514,7 +407,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }
