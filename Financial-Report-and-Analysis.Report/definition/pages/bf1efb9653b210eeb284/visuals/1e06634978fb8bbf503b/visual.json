@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "1e06634978fb8bbf503b",
   "position": {
-    "x": 53.434535104364329,
-    "y": 24.288425047438331,
+    "x": 52.913792705714094,
+    "y": 85.040023991326223,
     "z": 0,
-    "height": 134.39595192915877,
-    "width": 846.8564199873498,
+    "height": 591.50061131744678,
+    "width": 846.62068329142551,
     "tabOrder": 0
   },
   "visual": {
@@ -131,12 +131,57 @@
                       "Entity": "tbl_ChartofAccounts"
                     }
                   },
+                  "Property": "Class"
+                }
+              },
+              "queryRef": "tbl_ChartofAccounts.Class",
+              "nativeQueryRef": "Class",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
                   "Property": "SubClass"
                 }
               },
               "queryRef": "tbl_ChartofAccounts.SubClass",
               "nativeQueryRef": "SubClass",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
+                  "Property": "SubClass2"
+                }
+              },
+              "queryRef": "tbl_ChartofAccounts.SubClass2",
+              "nativeQueryRef": "SubClass2",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
+                  "Property": "Account"
+                }
+              },
+              "queryRef": "tbl_ChartofAccounts.Account",
+              "nativeQueryRef": "Account",
+              "active": false
             }
           ]
         },
@@ -163,8 +208,192 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "tbl_GL"
+                      }
+                    },
+                    "Property": "Amount"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "tbl_ChartofAccounts.Class"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
+                  "Property": "Class"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "tbl_ChartofAccounts.SubClass"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
+                  "Property": "SubClass"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "tbl_ChartofAccounts.SubClass2"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "tbl_ChartofAccounts"
+                    }
+                  },
+                  "Property": "SubClass2"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "tbl_ChartofAccounts.Account"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Interest & Tax'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Non-operating'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Trading account'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Cost of Sales'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'Cost of Sales'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Operating account'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Depreciation & Amortization'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Operating Expenses'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "values": [
         {
@@ -344,6 +573,162 @@
             }
           }
         }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.79554698550598D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                        }
+                      },
+                      "Property": "Année"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124.94947842627765D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                          }
+                        },
+                        "Property": "Année"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2020L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.98669110343917D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                          }
+                        },
+                        "Property": "Année"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2019L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.8392753904371D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_56fd508a-5b5d-4706-b6ac-a04fc7f6dd23"
+                          }
+                        },
+                        "Property": "Année"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2018L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "283.00800516701577D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "tbl_ChartofAccounts.Class"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -464,7 +849,126 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "eb08742bd555a44add10",
+        "name": "6905397198810feb4b58",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "tbl_Calendar"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hiérarchie de dates"
+              }
+            },
+            "Level": "Année"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d535afa9ce72da5c257a",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "tbl_Calendar"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hiérarchie de dates"
+              }
+            },
+            "Level": "Trimestre"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "596c82913163a3785432",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "tbl_Calendar"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hiérarchie de dates"
+              }
+            },
+            "Level": "Mois"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fcae18974af79e96c80b",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "tbl_Calendar"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Hiérarchie de dates"
+              }
+            },
+            "Level": "Jour"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a63f9fb35b36a45a532a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "tbl_GL"
+                  }
+                },
+                "Property": "Amount"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "23e15aa66223c33ce733",
         "field": {
           "Column": {
             "Expression": {
@@ -472,7 +976,7 @@
                 "Entity": "tbl_ChartofAccounts"
               }
             },
-            "Property": "SubClass"
+            "Property": "Report"
           }
         },
         "type": "Categorical",
@@ -497,7 +1001,7 @@
                             "Source": "t"
                           }
                         },
-                        "Property": "SubClass"
+                        "Property": "Report"
                       }
                     }
                   ],
@@ -505,7 +1009,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Sales'"
+                          "Value": "'Profit and Loss'"
                         }
                       }
                     ]
@@ -514,7 +1018,64 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "982704b7147e6b60d370",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "tbl_ChartofAccounts"
+              }
+            },
+            "Property": "Class"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "13ab3dd35089982f4648",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "tbl_ChartofAccounts"
+              }
+            },
+            "Property": "SubClass"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "12ddb10ecb545d5af1a4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "tbl_ChartofAccounts"
+              }
+            },
+            "Property": "SubClass2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a880ded8fff67e50d595",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "tbl_ChartofAccounts"
+              }
+            },
+            "Property": "Account"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
