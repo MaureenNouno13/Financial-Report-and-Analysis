@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "57d7166aee9d96180239",
   "position": {
-    "x": 947.24857685009488,
-    "y": 24.288425047438331,
-    "z": 3000,
-    "height": 252.59962049335866,
-    "width": 302.7956989247312,
-    "tabOrder": 3000
+    "x": 1099.4560404807085,
+    "y": 53.434535104364329,
+    "z": 1000,
+    "height": 247.74193548387098,
+    "width": 148.96900695762176,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -87,23 +87,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5e491bee2e28ca25a396",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "tbl_territory"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
